@@ -1,4 +1,4 @@
-import { Card, Image } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useState } from "react";
 import ImageView from "./ImageView";
 
@@ -13,11 +13,10 @@ function SingleImage({ meme }) {
         className="card-hover"
         onClick={() => setImageView(true)}
       >
-        <Image
+        <Card.Img
           variant="top"
           src={meme.url}
           style={{ maxHeight: "70vh", objectFit: "contain" }}
-          fluid
         />
         <Card.Body>
           <Card.Title>{meme.name}</Card.Title>
