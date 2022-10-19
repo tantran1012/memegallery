@@ -25,7 +25,7 @@ function Board({ isViewAll }) {
 
   if (isViewAll) {
     return (
-      <>
+      <Row>
         <Masonry
           items={memes}
           columnGutter={30}
@@ -33,7 +33,7 @@ function Board({ isViewAll }) {
           overscanBy={5}
           render={ImageCard}
         />
-      </>
+      </Row>
     );
   } else {
     return (
