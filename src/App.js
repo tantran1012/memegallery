@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import { Container } from "react-bootstrap";
+import Board from "./Board";
+import NavBar from "./NavBar";
+import './App.css'
 
 function App() {
+  const [toggle, setToggle] = useState(true);
+
+  const handleAll = () => {
+    setToggle(true);
+  };
+  const handleRandom = () => {
+    setToggle(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar handleAll={handleAll} handleRandom={handleRandom} />
+      <Container className="mt-5 pt-4">
+        <Board isViewAll={toggle} />
+      </Container>
+    </>
   );
 }
 
